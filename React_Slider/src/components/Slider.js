@@ -35,7 +35,7 @@ class Slider extends React.Component{
 	}
 
 	componentDidMount(){
-		this.interval = setInterval(()=>this.intervalBetweenSlides(), 3000)
+		this.interval = setInterval(()=> this.intervalBetweenSlides(), 3000)
 	}
 
 	componentWillUnmount(){
@@ -94,8 +94,7 @@ class Slider extends React.Component{
 		}
 	}
 
-	setSliderStyle(){
-
+	setSliderStyles(){
 		const transition = this.state.active * - 100/this.state.slides.length
 
 		return {
@@ -109,7 +108,7 @@ class Slider extends React.Component{
 
 		return this.state.slides.map((item, index) => (
 			<div 
-				className = 'each-slide'
+				className = "each-slide"
 				key = {index}
 				style = {{backgroundImage: item.eachSlide, width: transition}}>				
 			</div>
@@ -176,14 +175,14 @@ class Slider extends React.Component{
 			<div className = "slider">
 				<div
 					className = "wrapper"
-					slyle = {this.setSliderStyle()}>
+					style = {this.setSliderStyles()}>
 					{this.renderSlides()}					
 				</div>
 
 				{this.renderArrows()}
-				
+
 				<ul className = "dots-container">
-					{this.renderDots}
+					{this.renderDots()}
 				</ul>
 
 				<a
